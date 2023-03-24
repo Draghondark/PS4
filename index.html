@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+    <h1>ESP32 Server 9.00u</h1>
+	
+		<p>PS4 9.00 Goldhen 2.3</p>
+
+		<p>SSID: PS4_Draghon</p>
+
+		<p>Password: "password"</p>
+
+		<p>AP IP: 10.1.1.1</p>
+
+		<p>IP Administrator: 10.1.1.1/index.html</p>
+  
+
+    <br>
+
+    <div id="main" style="display: none;">
+
+        <br>
+        <script
+            type="module"
+            src="https://unpkg.com/esp-web-tools@7.1.0/dist/web/install-button.js?module"></script>
+        <esp-web-install-button id="installButton" manifest="manifest.json"></esp-web-install-button>
+        <br>
+        <span> </span>
+    </div>
+    <div id="notSupported" style="display: none;">
+        
+    </div>
+    
+
+    <script>
+        if(navigator.serial){
+            document.getElementById("notSupported").style.display = 'none';
+            document.getElementById("main").style.display = 'block';
+        } else {
+            document.getElementById("notSupported").style.display = 'block';
+            document.getElementById("main").style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
